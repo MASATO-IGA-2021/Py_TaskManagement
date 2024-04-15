@@ -24,7 +24,7 @@ class main:
             comment = request.form["comment"]
             task_ticket = task.Task(title, due_day, comment)
             line = line_util.lineUtil()
-            message = "タスク名"+ title +"期限日"+due_day+"内容"+comment
+            message = "タスク名{}期限日{}内容{}".format(title, due_day, comment)
             line.send_message(message)
             return render_template("TaskList.html")
         else:
